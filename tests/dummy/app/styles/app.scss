@@ -1,0 +1,30 @@
+@import "ember-vertical-timeline";
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font: {
+    size: 100%;
+    family: $primary-font; // variables inside partials > _variables.scss
+  }
+  color: $main-text;
+  background-color: $background;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  font-family: $secondary-font;
+}
+
+h1, h2 {
+  font-family: $secondary-font;
+  font-weight: bold;
+}
