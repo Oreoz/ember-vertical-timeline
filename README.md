@@ -3,27 +3,45 @@
 [![Build Status](https://travis-ci.org/Oreoz/ember-vertical-timeline.svg?branch=master)](https://travis-ci.org/Oreoz/ember-vertical-timeline)
 [![Code Climate](https://codeclimate.com/github/Oreoz/ember-vertical-timeline/badges/gpa.svg)](https://codeclimate.com/github/Oreoz/ember-vertical-timeline)
 
-This README outlines the details of collaborating on this Ember addon.
+## Description
+
+This addon is meant to be a simple Ember wrapper of the great vertical timeline initially created by the people over at [CodyHouse](https://codyhouse.co/gem/vertical-timeline/)!
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-vertical-timeline`
-* `npm install`
+Like most ember addons, simply run `ember install ember-vertical-timeline` and you should be all set!
 
-## Running
+If you want to include the basic styles for the components in your application; just add `@import "ember-vertical-timeline";` to your application's Sass stylesheet. Try out [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass) if you are not already using Sass in your application.
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## Docs
 
-## Running Tests
+Here's how you would go about creating a simple timeline:
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+```hbs
+{{#vertical-timeline as |timeline|}}
 
-## Building
+  {{#timeline.block as |block|}}
+    {{block.image}}
 
-* `ember build`
+    {{#block.content as |content|}}
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+      [[Whatever you want to display inside of the timeline block.]]
+
+      {{#content.date}}Jun 28{{/content.date}}
+    {{/block.content}}
+  {{/timeline.block}}
+
+  [[More blocks would go here]]
+
+{{/vertical-timeline}}
+
+```
+
+## Contributions
+Any contribution is more than welcomed. If you plan on introducing a new feature, please open an issue and share your idea prior to implementing it, it could save you precious time!
+
+## Troubleshooting
+If something is not working as expected, simply open an issue and we'll discuss how we'll go about fixing it!
+
+## Credits
+Once again, the [initial timeline](https://codyhouse.co/gem/vertical-timeline/) was created by the people over at [CodyHouse](https://codyhouse.co)!
