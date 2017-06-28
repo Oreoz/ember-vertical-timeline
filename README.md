@@ -1,4 +1,7 @@
-# ember-vertical-timeline
+# Ember Vertical Timeline
+
+[![Build Status](https://travis-ci.org/Oreoz/ember-vertical-timeline.svg?branch=master)](https://travis-ci.org/Oreoz/ember-vertical-timeline)
+[![Code Climate](https://codeclimate.com/github/Oreoz/ember-vertical-timeline/badges/gpa.svg)](https://codeclimate.com/github/Oreoz/ember-vertical-timeline)
 
 This README outlines the details of collaborating on this Ember addon.
 
