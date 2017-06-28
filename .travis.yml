@@ -1,46 +1,33 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-
+  - "$HOME/.npm"
 env:
-  # we recommend testing LTS's and latest stable release (bonus points to beta/canary)
-  - EMBER_TRY_SCENARIO=ember-lts-2.4
-  - EMBER_TRY_SCENARIO=ember-lts-2.8
-  - EMBER_TRY_SCENARIO=ember-release
-  - EMBER_TRY_SCENARIO=ember-beta
-  - EMBER_TRY_SCENARIO=ember-canary
-  - EMBER_TRY_SCENARIO=ember-default
-
+- EMBER_TRY_SCENARIO=ember-lts-2.4
+- EMBER_TRY_SCENARIO=ember-lts-2.8
+- EMBER_TRY_SCENARIO=ember-release
+- EMBER_TRY_SCENARIO=ember-beta
+- EMBER_TRY_SCENARIO=ember-canary
+- EMBER_TRY_SCENARIO=ember-default
 matrix:
   fast_finish: true
   allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
-
+  - env: EMBER_TRY_SCENARIO=ember-canary
 before_install:
-  - npm config set spin false
-  - npm install -g phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-
+- npm install
 script:
-  # Usually, it's ok to finish the test scenario without reverting
-  #  to the addon's original dependency state, skipping "cleanup".
-  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
-
+- node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
 deploy:
   provider: npm
-  email: "ohnoesmyoreos@gmail.com"
-  on:
-    tags: true
-    branch: master
+  email: ohnoesmyoreos@gmail.com
   api_key:
-    secure: mp/AOOmeQ2VF/ttHpEun1+mNXDPKyjOwXMkCbg0YtgrjtA04W7xpkzlFYqtyi4kpUVHa8xZ3V1FvfnOqTtr1pejexxMIBf7SWidV04WSRaK/GqawGH8b0Y5cDrmn4wGozCoHMwfibZDPpRrf/Jr7KCMI5Unok+nB+JIzBa68i3k1VxsjaTmDx8vjbbVayO8PAjksNlma4cpIEhm3Jv43VkSWlLO+nCMcVnqXi3JxvRWg2Oi2yq3P+HWIvrE4bnKGYk2lJhZOffUMnVP4Pn59q32lQIEiSWec7hW4o0veMzaMwSZK+K1wohIDWuy+njz2kmhxIWfjOCOJPNuuBiu7pJWZCLr0pfcOG+4gsRkQHKy2tnljfu8gz/bb4dFJELdgTAD2UjGz3dEnLYSS7TjBfbvXQtg7BICbKg8YHyY1dFHs2B0edB920LxI+7iyeUjEbtPBrR8h8mn9R/wqy40EUqRhFwTjedUqOzkXPo2jT+11TVY9zdomPQhGr77POS+kzPfDmJcUpqCw0rDaQT0lwfyFJbqzZqJTdUsw/S9fq1AXFn5kCG18HCpO38+QjRJNGXxsDOpQsrzck4PmhpTYt+jvS3EJLZIqDKYcxTRXbkge1KKY3aXbdOacvwoSb1+rAg1Rv82q6JFs7CVe8Gz+bdAelpFjbzwLxJ3AgtSDiH4=
+    secure: hG2GZR5tZUv+qthAxprSsJ91s+h0TU6yxfxLUzbT/EVCt9OmWv+6R4F9jHfhSP0271wxG+r+LcM/GXGjcKayvviJ+EYyExd8yUdu2q7qwRH5w5myeLExx1Y9a9dpLdO6bgFIlVZGHKflJHA73W4+z4t4dSiGEJbK0C4Nm4xmPH8UvXaYFd7b9WN0c9K1p+gEI7BOLVLYzVy+Oa1o8QFkfUzjepvTJ+fDwGAAMHxGFsG/v+NJ4/h+Rlsln/4ffzwmDHNusdfU18O6QrjmeR0nvmSofqLjv/OAzmbKvkyjOthkKc22sKWxbP42x30ui0bTW9hj1/QeDyO8oVaEGeph8KyPoPQ3OnVRtW6y14rPKurfClNYoXIOiWA8x7l/UH64SYFw6TX/2/44jdceGN8d+dmjqp+MMr3g7DiI+gMkTyVA4THgHg7wyjb7xF+OW8u0uuw0U3AyNprgT+Xc8rQgA8ebGd4gRuMkYAbll0/+/BCYPyoydx7jNGhPN3bDvV6DXiqh4g931k7ppBgYicCP+h06L0EeazGeVw776wRuJhwC63ea+TRQFCqHzZGhzEbqLua1NymXdJkCpnA+C/FDBoKS+w0x6Oeh4FXiJuLEesbSWi/a4eabYqS2Yw22SqTdVwnEpPtUTVjwEU+7oSCnwbbYFxSbBFC4Bjpe1MCPZk0=
+  on:
+    branch: master
