@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('vertical-timeline', 'Integration | Component | vertical timeline', {
+moduleForComponent('vertical-timeline', 'Integration | Component | Vertical Timeline', {
   integration: true
 });
 

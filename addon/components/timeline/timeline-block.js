@@ -6,5 +6,7 @@ const { Component } = Ember;
 export default Component.extend({
   layout,
 
-  classNames: 'timeline-block'
+  classNames: 'timeline-block',
+
+  animate: true
 });

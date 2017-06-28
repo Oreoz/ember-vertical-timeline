@@ -9,5 +9,5 @@ export default Component.extend({
   tagName: 'section',
   classNames: 'vertical-timeline',
 
-  animations: true
+  animate: true
 });

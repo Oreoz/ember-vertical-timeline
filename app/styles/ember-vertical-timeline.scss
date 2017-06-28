@@ -22,34 +22,8 @@ $output-bourbon-deprecation-warnings: false;
 	}
 }
 
-/* --------------------------------
-
-Main components
-
--------------------------------- */
-
-header {
-	height: 200px;
-	line-height: 200px;
-	text-align: center;
-	background: $color-1;
-
-	h1 {
-		color: $color-3;
-		@include font-size(18px);
-	}
-
-	@include MQ(L) {
-		height: 300px;
-		line-height: 300px;
-
-		h1 {
-			@include font-size(24px);
-		}
-	}
-}
-
-#cd-timeline {
+/* Main Components */
+.vertical-timeline {
 	position: relative;
 	padding: 2em 0;
 	margin: {
@@ -115,6 +89,7 @@ header {
 	height: 40px;
 	border-radius: 50%;
 	box-shadow: 0 0 0 4px $color-3, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05) ;
+  background: white;
 
 	img {
 		display: block;
@@ -141,7 +116,7 @@ header {
 			visibility: hidden;
 		}
 
-		 &.bounce-in {
+		&.bounce-in.animate {
 			visibility: visible;
 			@include animation(cd-bounce-1 .6s);
 		}
@@ -177,11 +152,11 @@ header {
 		color: $color-1;
 	}
 
-	p, .cd-read-more, .cd-date {
+	p, .cd-read-more, .timeline-date {
 		@include font-size(13px);
 	}
 
-	.cd-read-more, .cd-date {
+	.cd-read-more, .timeline-date {
 		display: inline-block;
 	}
 
@@ -202,7 +177,7 @@ header {
 		}
 	}
 
-	.cd-date {
+	.timeline-date {
 		float: left;
 		padding: .8em 0;
 		opacity: .7;
@@ -228,7 +203,7 @@ header {
 			@include font-size(16px);
 		}
 
-		.cd-read-more, .cd-date {
+		.cd-read-more, .timeline-date {
 			@include font-size(14px);
 		}
 	}
@@ -249,7 +224,7 @@ header {
 			float: left;
 		}
 
-		.cd-date {
+		.timeline-date {
 			position: absolute;
 			width: 100%;
 			left: 122%;
@@ -272,7 +247,7 @@ header {
 				float: right;
 			}
 
-			.cd-date {
+			.timeline-date {
 				left: auto;
 				right: 122%;
 				text-align: right;
@@ -283,7 +258,7 @@ header {
 			visibility: hidden;
 		}
 
-		 &.bounce-in {
+		&.bounce-in.animate {
 			visibility: visible;
 			@include animation(cd-bounce-2 .6s);
 		}
@@ -292,7 +267,7 @@ header {
 
 @include MQ(L) {
 	/* inverse bounce effect on even content blocks */
-	.timeline-block:nth-child(even) .timeline-content.bounce-in {
+	.timeline-block:nth-child(even) .timeline-content.bounce-in.animate {
 		@include animation(cd-bounce-2-inverse .6s);
 	}
 }

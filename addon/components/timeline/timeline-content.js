@@ -8,5 +8,7 @@ export default Component.extend(InViewportMixin, {
   layout,
 
   classNames: 'timeline-content',
-  classNameBindings: ['viewportEntered:bounce-in:is-hidden']
+  classNameBindings: ['viewportEntered:bounce-in:is-hidden', 'animate'],
+
+  animate: true
 });
