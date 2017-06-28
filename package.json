@@ -1,18 +1,24 @@
 {
   "name": "ember-vertical-timeline",
   "version": "0.0.1",
-  "description": "An ember wrapper for the Vertical Timeline created by CodyHouse",
+  "description": "An ember wrapper for the Vertical Timeline initially created by CodyHouse",
   "keywords": [
     "ember-addon",
     "timeline"
   ],
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Jean-Philippe Roy",
+    "email": "ohnoesmyoreos@gmail.com"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oreoz/ember-vertical-timeline.git"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
