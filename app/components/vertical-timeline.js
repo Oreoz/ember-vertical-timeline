@@ -1,0 +1,1 @@
+export { default } from 'ember-vertical-timeline/components/vertical-timeline';
