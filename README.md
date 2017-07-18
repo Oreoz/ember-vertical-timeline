@@ -1,5 +1,7 @@
 # Ember Vertical Timeline
 
+[![NPM Version](https://badge.fury.io/js/ember-vertical-timeline.svg)](https://badge.fury.io/js/ember-vertical-timeline)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-vertical-timeline.svg)](https://emberobserver.com/addons/ember-vertical-timeline)
 [![Build Status](https://travis-ci.org/Oreoz/ember-vertical-timeline.svg?branch=master)](https://travis-ci.org/Oreoz/ember-vertical-timeline)
 [![Code Climate](https://codeclimate.com/github/Oreoz/ember-vertical-timeline/badges/gpa.svg)](https://codeclimate.com/github/Oreoz/ember-vertical-timeline)
 
