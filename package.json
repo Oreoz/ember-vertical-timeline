@@ -1,6 +1,6 @@
 {
   "name": "ember-vertical-timeline",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "An ember wrapper for the Vertical Timeline initially created by CodyHouse",
   "keywords": [
     "ember-addon",
