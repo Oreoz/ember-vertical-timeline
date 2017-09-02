@@ -27,13 +27,13 @@ Here's how you would go about creating a simple timeline:
 
     {{#block.content as |content|}}
 
-      [[Whatever you want to display inside of the timeline block.]]
+      {{!Whatever you want to display inside of the timeline block.}}
 
       {{#content.date}}Jun 28{{/content.date}}
     {{/block.content}}
   {{/timeline.block}}
 
-  [[More blocks would go here]]
+  {{!More blocks would go here}}
 
 {{/vertical-timeline}}
 
@@ -41,29 +41,6 @@ Here's how you would go about creating a simple timeline:
 
 ## Contributions
 Any contribution is more than welcomed. If you plan on introducing a new feature, please open an issue and share your idea prior to implementing it, it could save you precious time!
-
-### Installation
-
-* `git clone` this repository
-* `npm install`
-* `bower install`
-
-### Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-### Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
 ## Troubleshooting
 If something is not working as expected, simply open an issue and we'll discuss how we'll go about fixing it!
