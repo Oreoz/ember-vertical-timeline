@@ -1,8 +1,6 @@
+import { run } from '@ember/runloop';
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-import Ember from 'ember';
-
-const { run } = Ember;
 
 moduleForComponent('timeline/timeline-image', 'Integration | Component | Timeline Image', {
   integration: true
