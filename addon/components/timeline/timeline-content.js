@@ -1,8 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import InViewportMixin from 'ember-in-viewport';
 import layout from '../../templates/components/timeline/timeline-content';
-
-const { Component } = Ember;
 
 export default Component.extend(InViewportMixin, {
   layout,
