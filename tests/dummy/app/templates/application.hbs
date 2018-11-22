@@ -1,10 +1,10 @@
 <h1 class="heading">Random Events</h1>
 
-{{#vertical-timeline as |timeline|}}
+{{#vertical-timeline data-test-timeline=true as |timeline|}}
 
   {{#each model as |event|}}
 
-    {{#timeline.block as |block|}}
+    {{#timeline.block data-test-timeline-block=true as |block|}}
       {{block.image class="green-timeline-pill"}}
 
       {{#block.content as |content|}}
