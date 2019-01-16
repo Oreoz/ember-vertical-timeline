@@ -5,6 +5,16 @@
 [![Build Status](https://travis-ci.org/Oreoz/ember-vertical-timeline.svg?branch=master)](https://travis-ci.org/Oreoz/ember-vertical-timeline)
 [![Code Climate](https://codeclimate.com/github/Oreoz/ember-vertical-timeline/badges/gpa.svg)](https://codeclimate.com/github/Oreoz/ember-vertical-timeline)
 
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+
+
+Installation
+------------------------------------------------------------------------------
 ## Description
 
 This addon is meant to be a simple Ember wrapper of the great vertical timeline initially created by the people over at [CodyHouse](https://codyhouse.co/gem/vertical-timeline/)!
@@ -44,6 +54,8 @@ Any contribution is more than welcomed. If you plan on introducing a new feature
 
 ## Troubleshooting
 If something is not working as expected, simply open an issue and we'll discuss how we'll go about fixing it!
+License
+------------------------------------------------------------------------------
 
 ## Credits
 Once again, the [initial timeline](https://codyhouse.co/gem/vertical-timeline/) was created by the people over at [CodyHouse](https://codyhouse.co)!
