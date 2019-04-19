@@ -3701,8 +3701,8 @@ ember-export-application-global@^2.0.0:
     ember-cli-babel "^6.0.0-beta.7"
 
 ember-in-viewport@^3.0.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/ember-in-viewport/-/ember-in-viewport-3.3.0.tgz#718a9df85c1ad7a16c804dc61ce540414cfad710"
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ember-in-viewport/-/ember-in-viewport-3.4.0.tgz#1ab8463a54162271ee2f0673085ea7f93c9a3813"
   dependencies:
     ember-auto-import "^1.2.15"
     ember-cli-babel "^7.1.2"
