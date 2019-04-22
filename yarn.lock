@@ -3701,12 +3701,12 @@ ember-export-application-global@^2.0.0:
     ember-cli-babel "^6.0.0-beta.7"
 
 ember-in-viewport@^3.0.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/ember-in-viewport/-/ember-in-viewport-3.3.0.tgz#718a9df85c1ad7a16c804dc61ce540414cfad710"
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/ember-in-viewport/-/ember-in-viewport-3.5.0.tgz#2ce2a50a4081d66ed40f6fd41f21c0cb020cb250"
   dependencies:
     ember-auto-import "^1.2.15"
     ember-cli-babel "^7.1.2"
-    intersection-observer-admin "0.1.0"
+    intersection-observer-admin "0.2.0"
     raf-pool "0.1.0"
 
 ember-load-initializers@^2.0.0:
@@ -5331,9 +5331,9 @@ inquirer@^6.2.2:
     strip-ansi "^5.0.0"
     through "^2.3.6"
 
-intersection-observer-admin@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/intersection-observer-admin/-/intersection-observer-admin-0.1.0.tgz#2e7cc3806302a603ea1d3d7975e2b25f205141ee"
+intersection-observer-admin@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/intersection-observer-admin/-/intersection-observer-admin-0.2.0.tgz#39773b17b73f3c52b3b2c442ee8ef4fbc676c407"
 
 into-stream@^3.1.0:
   version "3.1.0"
