@@ -1,63 +1,57 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('timeline/timeline-block', 'Integration | Component | Timeline Block', {
-  integration: true
-});
+module('Integration | Component | Timeline Block', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  assert.expect(1);
+  test('it renders', async function(assert) {
+    await render(hbs`
+      {{#timeline/timeline-block}}
+        template block text
+      {{/timeline/timeline-block}}
+    `);
 
-  this.render(hbs`
-    {{#timeline/timeline-block}}
-      template block text
-    {{/timeline/timeline-block}}
-  `);
+    assert.dom('div.timeline-block').exists();
+  });
 
-    assert.equal(this.$('div.timeline-block').length, 1);
-});
+  test('it yields the content component', async function(assert) {
+    await render(hbs`
+      {{#timeline/timeline-block as |block|}}
+        {{#block.content}}
 
-test('it yields the content component', function(assert) {
-  assert.expect(2);
+        {{/block.content}}
+      {{/timeline/timeline-block}}
+    `);
 
-  this.render(hbs`
-    {{#timeline/timeline-block as |block|}}
-      {{#block.content}}
+    assert.dom('div.timeline-block').exists();
+    assert.dom('div.timeline-content').exists();
+  });
 
-      {{/block.content}}
-    {{/timeline/timeline-block}}
-  `);
+  test('it yields the image component', async function(assert) {
+    await render(hbs`
+      {{#timeline/timeline-block as |block|}}
+        {{#block.image}}{{/block.image}}
 
-    assert.equal(this.$('div.timeline-block').length, 1);
-    assert.equal(this.$('div.timeline-content').length, 1);
-});
+        {{block.image}}
+      {{/timeline/timeline-block}}
+    `);
 
-test('it yields the image component', function(assert) {
-  assert.expect(2);
+    assert.dom('div.timeline-block').exists();
+    assert.dom('div.timeline-image').exists({ count: 2 });
+  });
 
-  this.render(hbs`
-    {{#timeline/timeline-block as |block|}}
-      {{#block.image}}{{/block.image}}
+  test('it is possible to build a timeline block with an image and a content', async function(assert) {
+    await render(hbs`
+      {{#timeline/timeline-block as |block|}}
+        {{block.image}}
 
-      {{block.image}}
-    {{/timeline/timeline-block}}
-  `);
+        {{#block.content}}{{/block.content}}
+      {{/timeline/timeline-block}}
+    `);
 
-    assert.equal(this.$('div.timeline-block').length, 1);
-    assert.equal(this.$('div.timeline-image').length, 2);
-});
-
-test('it is possible to build a timeline block with an image and a content', function(assert) {
-  assert.expect(2);
-
-  this.render(hbs`
-    {{#timeline/timeline-block as |block|}}
-      {{block.image}}
-
-      {{#block.content}}{{/block.content}}
-    {{/timeline/timeline-block}}
-  `);
-
-    assert.equal(this.$('div.timeline-block').length, 1);
-    assert.equal(this.$('div.timeline-image').length, 1);
+    assert.dom('div.timeline-block').exists();
+    assert.dom('div.timeline-image').exists();
+  });
 });

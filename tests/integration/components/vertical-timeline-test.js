@@ -1,12 +1,18 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('vertical-timeline', 'Integration | Component | Vertical Timeline', {
-  integration: true
-});
+module('Integration | Component | Vertical Timeline', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  this.render(hbs`{{vertical-timeline}}`);
+  test('it renders', async function(assert) {
+    await render(hbs`{{vertical-timeline}}`);
 
-  assert.equal(this.$('section.vertical-timeline').length, 1);
+    assert.dom('section.vertical-timeline').exists();
+
+    await render(hbs`<VerticalTimeline />`);
+
+    assert.dom('section.vertical-timeline').exists();
+  });
 });
