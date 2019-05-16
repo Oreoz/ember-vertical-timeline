@@ -9,6 +9,10 @@ module('Integration | Component | Vertical Timeline', function(hooks) {
   test('it renders', async function(assert) {
     await render(hbs`{{vertical-timeline}}`);
 
-    assert.equal(this.$('section.vertical-timeline').length, 1);
+    assert.dom('section.vertical-timeline').exists();
+
+    await render(hbs`<VerticalTimeline />`);
+
+    assert.dom('section.vertical-timeline').exists();
   });
 });

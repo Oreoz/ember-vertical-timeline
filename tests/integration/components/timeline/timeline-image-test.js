@@ -1,4 +1,3 @@
-import { run } from '@ember/runloop';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -8,44 +7,54 @@ module('Integration | Component | Timeline Image', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders using the inline syntax', async function(assert) {
-    assert.expect(1);
-
     await render(hbs`{{timeline/timeline-image}}`);
 
-    assert.equal(this.$('div.timeline-image').length, 1);
+    assert.dom('div.timeline-image').exists();
+
+    await render(hbs`<Timeline::TimelineImage />`);
+
+    assert.dom('div.timeline-image').exists();
   });
 
   test('it renders using the block syntax', async function(assert) {
-    assert.expect(1);
-
     await render(hbs`
       {{#timeline/timeline-image}}
-        template block text
+        yielded text
       {{/timeline/timeline-image}}
     `);
 
-    assert.equal(this.$('div.timeline-image').length, 1);
+    assert.dom('div.timeline-image').exists();
+    assert.dom('div.timeline-image').hasText('yielded text');
+
+    await render(hbs`
+      <Timeline::TimelineImage>
+        yielded text
+      </Timeline::TimelineImage>
+    `);
+
+    assert.dom('div.timeline-image').exists();
+    assert.dom('div.timeline-image').hasText('yielded text');
   });
 
   test('it has the animate class by default', async function(assert) {
-    assert.expect(1);
-
     await render(hbs`{{timeline/timeline-image}}`);
 
-    assert.equal(this.$('div.timeline-image.animate').length, 1);
+    assert.dom('div.timeline-image.animate').exists();
+
+    await render(hbs`<Timeline::TimelineImage />`);
+
+    assert.dom('div.timeline-image.animate').exists();
   });
 
   test('the animate class is bound as expected', async function(assert) {
-    assert.expect(2);
-
     this.set('animate', false);
 
     await render(hbs`{{timeline/timeline-image animate=animate}}`);
 
-    assert.equal(this.$('div.timeline-image.animate').length, 0);
+    assert.dom('div.timeline-image.animate').doesNotExist();
 
-    run(() => this.set('animate', true));
+    this.set('animate', true);
 
-    assert.equal(this.$('div.timeline-image.animate').length, 1);
+    assert.dom('div.timeline-image.animate').exists();
   });
 });

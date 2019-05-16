@@ -7,20 +7,16 @@ module('Integration | Component | Timeline Block', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    assert.expect(1);
-
     await render(hbs`
       {{#timeline/timeline-block}}
         template block text
       {{/timeline/timeline-block}}
     `);
 
-      assert.equal(this.$('div.timeline-block').length, 1);
+    assert.dom('div.timeline-block').exists();
   });
 
   test('it yields the content component', async function(assert) {
-    assert.expect(2);
-
     await render(hbs`
       {{#timeline/timeline-block as |block|}}
         {{#block.content}}
@@ -29,13 +25,11 @@ module('Integration | Component | Timeline Block', function(hooks) {
       {{/timeline/timeline-block}}
     `);
 
-      assert.equal(this.$('div.timeline-block').length, 1);
-      assert.equal(this.$('div.timeline-content').length, 1);
+    assert.dom('div.timeline-block').exists();
+    assert.dom('div.timeline-content').exists();
   });
 
   test('it yields the image component', async function(assert) {
-    assert.expect(2);
-
     await render(hbs`
       {{#timeline/timeline-block as |block|}}
         {{#block.image}}{{/block.image}}
@@ -44,13 +38,11 @@ module('Integration | Component | Timeline Block', function(hooks) {
       {{/timeline/timeline-block}}
     `);
 
-      assert.equal(this.$('div.timeline-block').length, 1);
-      assert.equal(this.$('div.timeline-image').length, 2);
+    assert.dom('div.timeline-block').exists();
+    assert.dom('div.timeline-image').exists({ count: 2 });
   });
 
   test('it is possible to build a timeline block with an image and a content', async function(assert) {
-    assert.expect(2);
-
     await render(hbs`
       {{#timeline/timeline-block as |block|}}
         {{block.image}}
@@ -59,7 +51,7 @@ module('Integration | Component | Timeline Block', function(hooks) {
       {{/timeline/timeline-block}}
     `);
 
-      assert.equal(this.$('div.timeline-block').length, 1);
-      assert.equal(this.$('div.timeline-image').length, 1);
+    assert.dom('div.timeline-block').exists();
+    assert.dom('div.timeline-image').exists();
   });
 });

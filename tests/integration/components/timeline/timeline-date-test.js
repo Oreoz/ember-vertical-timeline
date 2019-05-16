@@ -15,6 +15,6 @@ module('Integration | Component | Timeline Date', function(hooks) {
       {{/timeline/timeline-date}}
     `);
 
-    assert.equal(this.$('span.timeline-date').length, 1);
+    assert.dom('span.timeline-date').exists();
   });
 });
