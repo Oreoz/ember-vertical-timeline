@@ -1,18 +1,20 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('timeline/timeline-date', 'Integration | Component | Timeline Date', {
-  integration: true
-});
+module('Integration | Component | Timeline Date', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  assert.expect(1);
+  test('it renders', async function(assert) {
+    assert.expect(1);
 
-  this.render(hbs`
-    {{#timeline/timeline-date}}
-      template block text
-    {{/timeline/timeline-date}}
-  `);
+    await render(hbs`
+      {{#timeline/timeline-date}}
+        template block text
+      {{/timeline/timeline-date}}
+    `);
 
-  assert.equal(this.$('span.timeline-date').length, 1);
+    assert.equal(this.$('span.timeline-date').length, 1);
+  });
 });
