@@ -5,12 +5,11 @@ import layout from '../../templates/components/timeline/timeline-image';
 export default Component.extend(InViewportMixin, {
   layout,
 
-  classNames: 'timeline-image',
-  classNameBindings: ['viewportEntered:bounce-in:is-hidden', 'animate'],
-
   animate: true,
+  classNames: 'timeline-image',
+  classNameBindings: ['bounceIn:bounce-in:is-hidden', 'animate'],
 
   didEnterViewport() {
-    this.set('viewportEntered', true);
-  }
+    this.set('bounceIn', true);
+  },
 });
