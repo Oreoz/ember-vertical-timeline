@@ -10,10 +10,6 @@ module('Integration | Component | Timeline Image', function(hooks) {
     await render(hbs`{{timeline/timeline-image}}`);
 
     assert.dom('div.timeline-image').exists();
-
-    await render(hbs`<Timeline::TimelineImage />`);
-
-    assert.dom('div.timeline-image').exists();
   });
 
   test('it renders using the block syntax', async function(assert) {
@@ -25,23 +21,10 @@ module('Integration | Component | Timeline Image', function(hooks) {
 
     assert.dom('div.timeline-image').exists();
     assert.dom('div.timeline-image').hasText('yielded text');
-
-    await render(hbs`
-      <Timeline::TimelineImage>
-        yielded text
-      </Timeline::TimelineImage>
-    `);
-
-    assert.dom('div.timeline-image').exists();
-    assert.dom('div.timeline-image').hasText('yielded text');
   });
 
   test('it has the animate class by default', async function(assert) {
     await render(hbs`{{timeline/timeline-image}}`);
-
-    assert.dom('div.timeline-image.animate').exists();
-
-    await render(hbs`<Timeline::TimelineImage />`);
 
     assert.dom('div.timeline-image.animate').exists();
   });
