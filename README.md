@@ -19,6 +19,8 @@ Installation
 
 This addon is meant to be a simple Ember wrapper of the great vertical timeline initially created by the people over at [CodyHouse](https://codyhouse.co/gem/vertical-timeline/)!
 
+__Currently not looking to add features to this addon, I'm simply keeping it safe and healthy with the help of Dependabot.__
+
 ## Installation
 
 Like most ember addons, simply run `ember install ember-vertical-timeline` and you should be all set!
