@@ -30,7 +30,7 @@
   "dependencies": {
     "ember-cli-babel": "^7.7.3",
     "ember-cli-bourbon": "^2.0.0",
-    "ember-cli-htmlbars": "^4.0.0",
+    "ember-cli-htmlbars": "^5.6.5",
     "ember-in-viewport": "^3.5.5"
   },
   "devDependencies": {
@@ -40,7 +40,7 @@
     "ember-cli": "~3.15.1",
     "ember-cli-dependency-checker": "^3.1.0",
     "ember-cli-eslint": "^5.1.0",
-    "ember-cli-htmlbars": "^4.0.0",
+    "ember-cli-htmlbars": "^5.6.5",
     "ember-cli-htmlbars-inline-precompile": "^3.0.0",
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-sass": "^10.0.0",
