@@ -31,7 +31,7 @@
     "ember-cli-babel": "^7.7.3",
     "ember-cli-bourbon": "^2.0.0",
     "ember-cli-htmlbars": "^4.0.0",
-    "ember-in-viewport": "^3.5.5"
+    "ember-in-viewport": "^4.0.2"
   },
   "devDependencies": {
     "@ember/jquery": "^1.1.0",
